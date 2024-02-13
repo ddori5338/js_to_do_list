@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    background-image: url('assets/bgi.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    background-color: white;
+    min-height: 100vh;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-top: 8px solid blanchedalmond;
+    border-bottom: 8px solid blanchedalmond;    
+}
+
+.input-area {
+    margin: 1em 0em;
+    position: relative;
+}
+.input-box {
+    border: 1px solid blanchedalmond;
+    min-width: 80%;
+}
+.input-box:focus {
+    outline: none;
+    border-bottom: 3px solid blanchedalmond;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    transition: 0.5s;
+    padding-top: 35px;
+}
+.input-box + label > span {
+    font-weight: 300;
+    margin: 0;
+    position: absolute;
+    color: #8f8f8f;
+    font-size: 14px;
+    top: 3px;
+    left: 10px;
+    -webkit-transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+    transition: top 0.2s ease, font-size 0.2s ease, color 0.2s ease;
+}
+.input-box:focus + label > span {
+    top: 0px;
+    color: #333;
+}
+
+
+.ab {
+    border: 1px solid blanchedalmond;
+    background-color: blanchedalmond;
+}
+.ab:hover {
+    border: 1px solid darkorange;
+    background-color: darkorange;
+}
+.task-area {
+    border: 1px solid lightgray;
+}
+.task-tabs {
+    display: flex;
+    border-bottom: 1px solid lightgray;
+    position: relative;
+}
+
+.task-tabs div {
+    padding: 1em;
+}
+
+#underline {
+    height: 4px;
+    background-color: pink;
+    position: absolute;
+    width: 60px;
+    left: 0px;
+    top: 52px;
+    padding: 0px;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid lightgray;
+    position: relative
+}
+
+.task span {
+    padding: 1em;
+}
+
+.check-sign {
+    font-weight: 900;
+    font-size: 20px;
+    color: limegreen;
+}
+
+.trash-sign {
+    font-weight: 900;
+    font-size: 20px;
+    color: red;
+}
+
+.button-box {
+    display: flex;
+}
+
+.button-box button {
+    height: 100%;
+    border: none;
+    width: 5em;
+    margin: 0;
+    background-color: white;
+    transition: 0.5s;
+}
+
+.button-box button :active {
+    position: relative;
+    top: 2px
+}
+
+.button-box button:first-child:hover {
+    background-color: greenyellow;
+}
+
+.button-box button:nth-child(2):hover {
+    background-color: rgb(255, 0, 0, 0.3)
+}
+
