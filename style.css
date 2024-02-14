@@ -48,6 +48,7 @@ body {
 
 
 .ab {
+    width: 28px;
     border: 1px solid blanchedalmond;
     background-color: blanchedalmond;
 }
@@ -65,17 +66,25 @@ body {
 }
 
 .task-tabs div {
-    padding: 1em;
+    padding: 0em;
+}
+
+.tab-button {
+    height: 45px;
+    width: 90px;
+    border: 0px;
+    background-color: white;
 }
 
 #underline {
     height: 4px;
     background-color: pink;
     position: absolute;
-    width: 60px;
+    width: 90px;
     left: 0px;
-    top: 52px;
+    top: 41px;
     padding: 0px;
+    transition: 0.2s;
 }
 
 .task {
@@ -102,6 +111,12 @@ body {
     color: red;
 }
 
+.rotate-sign {
+    font-weight: 900;
+    font-size: 20px;
+    color: gray;
+}
+
 .button-box {
     display: flex;
 }
@@ -117,7 +132,7 @@ body {
 
 .button-box button :active {
     position: relative;
-    top: 2px
+    top: 2px;
 }
 
 .button-box button:first-child:hover {
@@ -128,3 +143,12 @@ body {
     background-color: rgb(255, 0, 0, 0.3)
 }
 
+.task-done {
+    text-decoration: line-through;
+    background-color: gainsboro;
+}
+
+.task-done button-box{
+    text-decoration: none;
+    background-color: white;
+}
