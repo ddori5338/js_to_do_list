@@ -6,15 +6,22 @@
 // 끝남 탭은 끝난 아이템만, 진행 중 탭은 진행 중인 아이템만 나온다.
 // 모두 탭을 누르면 다시 모두 탭으로 돌아온다.
 
+// 추가로 하고 싶은 일
+// 1. 빈 체크 박스를 왼쪽으로 뺀다. 박스를 누르면 체크가 된 박스가 된다.
+// 2. 수정 버튼을 추가한다. 수정 버튼을 누르면 기존 문자열 위치에 인풋박스가 생긴다.
+// 3. 수정 버튼과 삭제 버튼은 작게 만들어서 오른쪽에 2행 1열로 배치한다.
+// 4. 체크 박스를 누르면 문자열에 취소선이 그어지는데, 왼쪽에서 오른쪽으로 그어진다.
+// 5. 드래그 앤 드롭 기능으로 순서를 바꿀 수 있다.
+
 let COMPLETE = true;
 let ONGOING = false;
 let NOTHING = undefined;
 let ban = NOTHING;
+let timerSet = false;
 let taskInput = document.getElementById("task-input");
 let addButton = document.getElementById("add-button");
 let taskList = [];
 addButton.addEventListener("mousedown", addTask);
-
 
 let allButton = document.getElementById("all-tab");
 let ongoingButton = document.getElementById("ongoing-tab");
@@ -30,8 +37,22 @@ doneButton.addEventListener("click", function() {
     document.getElementById("underline").style.left = 180 + "px";
 });
 
+taskInput.addEventListener("keydown", function(e) {
+    if (e.key === "Enter" && !timerSet) {
+        timerSet = true;
+        setTimeout(() => {
+            addTask();
+            timerSet = false;
+        }, 100);
+    }
+});
 
 function addTask() {
+    if (taskInput.value == null || taskInput.value.trim() === '') {
+        alert("할 일을 입력해주세요.");
+        taskInput.value = '';
+        return;
+    }
     let task = {
         id: new Date().getTime() + Math.random(),
         taskContent: taskInput.value,
